@@ -1,0 +1,84 @@
+/* Projects Section */
+.projects {
+  background-color:#2c3e50; /* Dark grayish blue for a professional feel */
+  padding: 50px 20px;
+  color: #ecf0f1; /* Light text for readability */
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #ff6f61;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-item {
+  background-color: #34495e; /* Slightly lighter than section background */
+  border-radius: 8px;
+  overflow: hidden;
+  width: 30%; /* Adjust width for larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-img {
+  width: 100%; /* Make the image span the width of the card */
+  height: 250px; /* Increase the height for better visibility */
+  object-fit: contain; /* Ensure the entire image fits without cropping */
+  background-color: #1c2833; /* Add a background color for a cleaner look if images have transparency */
+  border-bottom: 2px solid #ff6f61; /* Accent border for separation */
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-link {
+  font-size: 1.2rem;
+  color: #ff6f61; /* Accent color */
+  text-decoration: none;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .projects-container {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center; /* Center items horizontally */
+  }
+
+  .project-item {
+      width: 90%; /* Make project items take up more space on smaller screens */
+      margin-bottom: 20px; /* Add spacing between cards */
+  }
+}

@@ -1,2 +1,2 @@
-# Website
-Online Portfolio of Muddathir Julie
+# website
+MJ Website
