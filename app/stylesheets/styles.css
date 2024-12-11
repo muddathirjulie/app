@@ -146,22 +146,6 @@ body {
 }
 
 @media screen and (max-width: 480px) {
-  .navbar-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .hamburger {
-    display: block;
-    position: relative; /* Ensure precise positioning */
-    left: -70px; /* Adjust this value to move the icon left */
-  }
   .home h1 {
     font-size: 32px;
   }
