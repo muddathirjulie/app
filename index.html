@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDJML8LS20"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-KDJML8LS20"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-KDJML8LS20');
-</script>
+      gtag("config", "G-KDJML8LS20");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muddathir Julie | Software Engineer</title>
@@ -169,7 +174,6 @@
         </div>
       </div>
     </section>
-    
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
@@ -236,90 +240,189 @@
         </div>
       </div>
     </section>
-
     <section class="skills-section" id="skills">
       <h2>My Skills</h2>
-        <div class="skills-list">
-          <div
-            class="skill"
-            data-description="Strong understanding of semantic HTML for creating structured web pages and layouts."
-          >
-            HTML
-          </div>
-          <div
-            class="skill"
-            data-description="Proficient in creating responsive designs, animations, and styling web components."
-          >
-            CSS
-          </div>
-          <div
-            class="skill"
-            data-description="Experienced in modern JavaScript, ES6+, and frameworks for dynamic web applications."
-          >
-            JavaScript
-          </div>
-          <div
-            class="skill"
-            data-description="Knowledgeable in TypeScript for building scalable, type-safe applications, improving code maintainability."
-          >
-            TypeScript
-          </div>
-          <div
-            class="skill"
-            data-description="Skilled in developing applications with C# for both web and desktop platforms using .NET technologies."
-          >
-            C#
-          </div>
-          <div
-            class="skill"
-            data-description="Proficient in writing complex queries, designing databases, and optimizing performance in SQL-based systems."
-          >
-            SQL
-          </div>
-          <div
-            class="skill"
-            data-description="Experienced in Java development for building robust, high-performance applications, including web and mobile."
-          >
-            Java
-          </div>
-          <div
-            class="skill"
-            data-description="Familiar with Angular for building dynamic, single-page applications with modern web development practices."
-          >
-            Angular
-          </div>
-          <div
-            class="skill"
-            data-description="Proficient in .NET technologies for building scalable web applications and APIs using C# and ASP.NET."
-          >
-            .NET
-          </div>
-          <div
-            class="skill"
-            data-description="Skilled in building Android applications using Android Studio, Java, and Kotlin for mobile platforms."
-          >
-            Android Studio
-          </div>
-          <div
-            class="skill"
-            data-description="Experienced in creating interactive data visualizations, reports, and dashboards using Power BI for business intelligence."
-          >
-            Power BI
-          </div>
-          <div
-            class="skill"
-            data-description="Proficient in data analysis, visualization, and automation using Excel's advanced features and VBA."
-          >
-            Excel
-          </div>
+
+      <!-- Skill Categories -->
+      <div class="skill-categories">
+        <button class="category-btn active" data-category="web">
+          Web Development
+        </button>
+        <button class="category-btn" data-category="backend">
+          Backend Development
+        </button>
+        <button class="category-btn" data-category="data">
+          Data Analysis & BI
+        </button>
+        <button class="category-btn" data-category="software">
+          Software Development & DevOps
+        </button>
+      </div>
+
+      <!-- Skill List -->
+      <div class="skills-list">
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Strong understanding of semantic HTML for structured web pages."
+        >
+          HTML
+        </div>
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Styling web components, animations, and responsive designs."
+        >
+          CSS
+        </div>
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Expertise in JavaScript ES6+, building dynamic web applications."
+        >
+          JavaScript
+        </div>
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Type-safe applications using TypeScript for better maintainability."
+        >
+          TypeScript
+        </div>
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Building modern web applications with React."
+        >
+          React
+        </div>
+        <div
+          class="skill"
+          data-category="web"
+          data-description="Creating scalable single-page applications with Angular."
+        >
+          Angular
+        </div>
+
+        <div
+          class="skill"
+          data-category="backend"
+          data-description="Developing RESTful APIs and backend services in C# with .NET."
+        >
+          C# & .NET
+        </div>
+        <div
+          class="skill"
+          data-category="backend"
+          data-description="SQL database management, query optimization, and indexing."
+        >
+          SQL
+        </div>
+        <div
+          class="skill"
+          data-category="backend"
+          data-description="Robust and scalable application development with Java."
+        >
+          Java
+        </div>
+        <div
+          class="skill"
+          data-category="backend"
+          data-description="Building APIs, backend logic, and authentication with PHP."
+        >
+          PHP
+        </div>
+
+        <div
+          class="skill"
+          data-category="data"
+          data-description="Data modeling, visualization, and BI reporting with Power BI."
+        >
+          Power BI
+        </div>
+        <div
+          class="skill"
+          data-category="data"
+          data-description="Data analysis, automation, and macros using Excel & VBA."
+        >
+          Excel & VBA
+        </div>
+        <div
+          class="skill"
+          data-category="data"
+          data-description="Data processing, analytics, and scripting with Python."
+        >
+          Python
+        </div>
+
+        <div
+          class="skill"
+          data-category="software"
+          data-description="Version control and collaboration using Git & GitHub."
+        >
+          Git & GitHub
+        </div>
+        <div
+          class="skill"
+          data-category="software"
+          data-description="Containerization and deployment with Docker."
+        >
+          Docker
+        </div>
+        <div
+          class="skill"
+          data-category="software"
+          data-description="Deploying and managing cloud applications on AWS & Firebase."
+        >
+          AWS & Firebase
+        </div>
+        <div
+          class="skill"
+          data-category="software"
+          data-description="Automating build & deployment processes with CI/CD pipelines."
+        >
+          CI/CD
         </div>
       </div>
     </section>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".category-btn");
+        const skills = document.querySelectorAll(".skill");
+
+        function filterSkills(category) {
+          skills.forEach((skill) => {
+            skill.style.display =
+              skill.getAttribute("data-category") === category
+                ? "block"
+                : "none";
+          });
+        }
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            document
+              .querySelector(".category-btn.active")
+              .classList.remove("active");
+            button.classList.add("active");
+            filterSkills(button.getAttribute("data-category"));
+          });
+        });
+
+        filterSkills("web"); // Default category
+      });
+    </script>
+
     <section class="contact" id="contact">
-      <div id="particles-contact-js"></div> <!-- Particles container -->
+      <div id="particles-contact-js"></div>
+      <!-- Particles container -->
       <h1>Contact Me</h1>
-      <form action="https://formspree.io/f/xovqlppr" method="POST" class="contact-form">
+      <form
+        action="https://formspree.io/f/xovqlppr"
+        method="POST"
+        class="contact-form"
+      >
         <div class="form-group">
           <label for="email">Your Email:</label>
           <input type="email" id="email" name="email" required />
@@ -331,7 +434,6 @@
         <button type="submit" class="btn-submit">Send</button>
       </form>
     </section>
-    
 
     <!-- Social Links - Left -->
     <div class="fixed-socials">
