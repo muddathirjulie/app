@@ -22,6 +22,8 @@ body {
 .home-content {
   z-index: 1;
   max-width: 800px; /* To ensure content does not stretch too much */
+  padding: 10px; /* Added padding for better spacing */
+  box-sizing: border-box;
 }
 
 .home h1 {
@@ -41,6 +43,11 @@ body {
   font-size: 28px;
   margin: 20px 0;
   color: #e74c3c; /* Red for the intro */
+}
+
+.home .description {
+  font-size: 18px; /* Adjusted for better readability */
+  line-height: 1.6;
 }
 
 .cta-button {
@@ -134,6 +141,9 @@ body {
   .home h2 {
     font-size: 24px;
   }
+  .home .description {
+    font-size: 16px; /* Adjusted for better legibility on smaller screens */
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -142,6 +152,9 @@ body {
   }
   .home h2 {
     font-size: 22px;
+  }
+  .home .description {
+    font-size: 14px; /* Reduced size for mobile devices */
   }
 }
 
@@ -157,7 +170,17 @@ body {
   .fixed-socials, .fixed-email {
     display: none;
   }
+
+  .home .description {
+    font-size: 14px; /* Adjusted for small screens */
+  }
+
+  .cta-button {
+    padding: 12px 25px; /* Slightly smaller button for mobile */
+    font-size: 16px;
+  }
 }
+
 #particles-contact-js {
   position: absolute;
   top: 0;
@@ -166,6 +189,7 @@ body {
   height: 100%;
   z-index: -1;
 }
+
 .contact {
   position: relative;
   overflow: hidden;
