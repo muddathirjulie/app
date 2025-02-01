@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+    max-width: 100vw; /* Ensures body doesn't exceed viewport width */
   background-color: #1e2a3b; /* Dark Blue background for contrast */
 }
 
@@ -10,11 +11,10 @@ body {
   position: fixed;
   top: 0;
   right: 0; /* Aligns the navbar to the right */
-  background:none; /* Darker background for the navbar */
+  background: none; /* Darker background for the navbar */
   padding: 15px 30px; /* Increased padding inside the navbar */
   z-index: 100;
   width: auto; /* Adjusts the width to fit the content */
- 
   transition: all 0.3s ease-in-out; /* Smooth transition for background color */
 }
 
@@ -68,6 +68,9 @@ body {
   font-size: 35px; /* Larger hamburger icon */
   color: white;
   cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 30px;
 }
 
 .hamburger:focus {
@@ -78,15 +81,17 @@ body {
 @media screen and (max-width: 1200px) {
   .navbar-container {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .nav-links {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     display: none; /* Hide menu by default on mobile */
     width: 100%;
     margin-top: 20px;
+    background-color: #1e2a3b; /* Match the background color */
+    padding: 10px 0; /* Add some padding */
   }
 
   .nav-links.active {
@@ -95,8 +100,6 @@ body {
 
   .hamburger {
     display: block;
-    order: -1; /* Move the hamburger button to the top */
-    margin-bottom: 10px; /* Optional: Add some spacing */
   }
 }
 

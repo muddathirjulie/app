@@ -70,7 +70,7 @@ particlesJS("particles-js", {
   retina_detect: true,
 });
 
-// Toggle navigation menu
+/// Toggle navigation menu
 document.getElementById("hamburger-button").addEventListener("click", function () {
   const navLinks = document.getElementById("nav-links");
   navLinks.classList.toggle("active");
@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Optional: Add custom behavior for the contact form here
 });
 
-  document.getElementById("current-year").textContent = new Date().getFullYear();
+document.getElementById("current-year").textContent = new Date().getFullYear();
 
-//Skills Section 
+// Skills Section 
 function showDescription(skillId) {
   // Hide all descriptions
   const descriptions = document.querySelectorAll('.description-content');
@@ -98,4 +98,3 @@ function showDescription(skillId) {
     activeDescription.classList.add('active');
   }
 }
-
