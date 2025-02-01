@@ -6,10 +6,6 @@ body {
   background-color: #1e2a3b; /* Dark Blue background for contrast */
 }
 
-* {
-  outline: 1px solid red; /* Highlights all elements */
-}
-
 /* Home Section */
 .home {
   display: flex;
