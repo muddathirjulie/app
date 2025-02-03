@@ -98,6 +98,7 @@ body.light-mode .hamburger {
 
 @media screen and (max-width: 768px) {
   .navbar {
+    top: 11px;
     padding: 20px;
   }
 
@@ -118,7 +119,7 @@ body.light-mode .hamburger {
 
   .nav-links {
     position: absolute;
-    top: 50px;
+    top: 30px;
     right: -100%;
     width: 70%;
     height: auto;
