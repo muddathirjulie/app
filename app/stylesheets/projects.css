@@ -1,6 +1,6 @@
-/* Projects Section */
+/* Projects Section - Dark Theme */
 .projects {
-  background-color:#2c3e50; /* Dark grayish blue for a professional feel */
+  background-color: #2c3e50; /* Dark grayish blue for a professional feel */
   padding: 50px 20px;
   color: #ecf0f1; /* Light text for readability */
   text-align: center;
@@ -10,7 +10,7 @@
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #ff6f61;
+  color: #ff6f61; /* Accent color */
 }
 
 .projects-container {
@@ -70,15 +70,47 @@
   text-decoration: underline;
 }
 
+/* Light Theme */
+body.light-mode .projects {
+  background-color: #f5f5dc; /* Beige background for light theme */
+  color: #2c3e50; /* Dark text for readability */
+}
+
+body.light-mode .projects h2 {
+  color: #000080; /* Navy blue heading for light theme */
+}
+
+body.light-mode .project-item {
+  background-color: #e0e0e0; /* Light grey for project items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for the light theme */
+}
+
+body.light-mode .project-img {
+  background-color: #d3d3d3; /* Light grey background for images */
+  border-bottom: 2px solid #000080; /* Navy blue accent border */
+}
+
+body.light-mode .project-content {
+  color: #2c3e50; /* Dark text for project content */
+}
+
+body.light-mode .project-link {
+  color: #000080; /* Navy blue for project links */
+}
+
+body.light-mode .project-link:hover {
+  text-decoration: underline;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .projects-container {
-      flex-direction: column; /* Stack items vertically on small screens */
-      align-items: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items horizontally */
   }
 
   .project-item {
-      width: 90%; /* Make project items take up more space on smaller screens */
-      margin-bottom: 20px; /* Add spacing between cards */
+    width: 90%; /* Make project items take up more space on smaller screens */
+    margin-bottom: 20px; /* Add spacing between cards */
   }
 }

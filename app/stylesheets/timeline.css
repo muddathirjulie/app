@@ -1,17 +1,18 @@
-.timeline-section {
+ /* Timeline Section - Dark Theme */
+ .timeline-section {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background: #2c3e50;
+  background: #2c3e50; /* Dark Background for Dark Theme */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.timeline-section.h2 {
+.timeline-section h2 {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #ff6f61;
+  color: #ff6f61; /* Light Red for Heading in Dark Theme */
 }
 
 /* Timeline */
@@ -25,7 +26,7 @@
   content: "";
   position: absolute;
   width: 4px;
-  background: #ff6f61;
+  background: #ff6f61; /* Light Red for Timeline Line */
   top: 0;
   bottom: 0;
   left: 50%;
@@ -41,8 +42,8 @@
 }
 
 .timeline-item .content {
-  background: #34495e;
-  color: white;
+  background: #34495e; /* Dark Content Background */
+  color: white; /* White Text for Content */
   padding: 15px 20px;
   border-radius: 5px;
   position: relative;
@@ -65,7 +66,7 @@
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #ff6f61;
+  background: #ff6f61; /* Light Red for Circular Marker */
   border-radius: 50%;
   top: 20px;
   z-index: 1;
@@ -77,6 +78,47 @@
 
 .timeline-item.right::before {
   left: -10px;
+}
+
+/* Light Theme */
+body.light-mode .timeline-section {
+  background: #f5f5dc; /* Beige Background for Light Theme */
+}
+
+body.light-mode .timeline-section h2 {
+  color: #000080; /* Navy Blue for Heading in Light Theme */
+}
+
+body.light-mode .timeline-item .content {
+  background: #e0e0e0; /* Light Grey for Content Background */
+  color: #000; /* Black Text for Content */
+}
+
+body.light-mode .timeline-item::before {
+  background: #0000cd; /* Royal Blue for Circular Marker */
+}
+
+body.light-mode .timeline::after {
+  background: #0000cd; /* Royal Blue Line for Timeline */
+}
+
+/* Light Theme - Hover Effect */
+body.light-mode .timeline-item:hover .content {
+  background: #dcdcdc; /* Slightly darker grey background for hover */
+  transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+body.light-mode .timeline-item:hover::before {
+  background: #4169e1; /* Royal Blue for Circular Marker Hover */
+}
+
+body.light-mode .timeline-item:hover {
+  background-color: #4169e1; /* Royal Blue for Timeline Item Hover */
+}
+
+/* Timeline Line Hover */
+body.light-mode .timeline-item:hover .timeline::after {
+  background: #4169e1; /* Royal Blue Line for Timeline Hover */
 }
 
 /* Responsive */

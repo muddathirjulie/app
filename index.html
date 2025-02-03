@@ -15,6 +15,7 @@
 
       gtag("config", "G-KDJML8LS20");
     </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muddathir Julie | Software Engineer</title>
@@ -38,6 +39,17 @@
     <!-- Navigation Bar -->
     <header class="navbar">
       <div class="navbar-container">
+        <!-- Lightbulb Toggle -->
+        <!-- Font Awesome CDN for icons -->
+        <div class="theme-toggle">
+          <!-- <i class="fa fa-sun"></i> -->
+          <!-- Sun Icon for Dark Mode -->
+          <!-- Lightbulb Icon for Light Mode -->
+          <div class="switch"></div>
+          <i class="fa fa-lightbulb"></i>
+          <!-- The Switch -->
+        </div>
+
         <nav class="nav-links" id="nav-links">
           <a href="#home">Home</a>
           <a href="#about">About</a>
@@ -496,7 +508,17 @@
         © <span id="current-year"></span>
       </p>
     </footer>
+    <script>
+      // Get the theme toggle button and the body element
+      const themeToggle = document.querySelector(".theme-toggle");
+      const body = document.body;
 
+      // Add event listener for clicking the theme toggle
+      themeToggle.addEventListener("click", function () {
+        // Toggle the class that switches between light and dark mode
+        body.classList.toggle("light-mode");
+      });
+    </script>
     <script src="main.js"></script>
     <script src="contact-particles.js"></script>
   </body>

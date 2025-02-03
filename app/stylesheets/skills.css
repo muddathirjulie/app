@@ -210,3 +210,49 @@
     padding: 8px 12px;
   }
 }
+
+/* Light Theme */
+body.light-mode .timeline-section {
+  background-color: #f5f5dc; /* Beige background for light theme */
+}
+
+body.light-mode .timeline-item .content {
+  background-color: #ffffff; /* White background for content */
+  color: black; /* Default text color */
+}
+
+body.light-mode .timeline-item:hover .content {
+  background-color: #f39c12; /* Change to a vibrant color on hover */
+}
+
+body.light-mode .skills-section {
+  background-color: #f5f5dc; /* Beige background for skills section */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow for light theme */
+}
+
+body.light-mode .skills-section h2 {
+  color: #2c3e50; /* Dark text for heading */
+}
+
+body.light-mode .category-btn {
+  background: #bdc3c7; /* Lighter grey background */
+}
+
+body.light-mode .category-btn:hover {
+  background: #ff6f61;
+}
+
+body.light-mode .skill {
+  background: #bdc3c7; /* Lighter grey background */
+  color: black;
+}
+
+body.light-mode .skill:hover {
+  background-color: #ff6f61;
+  color: white;
+}
+
+body.light-mode .skill::after {
+  background: rgba(0, 0, 0, 0.8);
+  color: #ecf0f1;
+}
