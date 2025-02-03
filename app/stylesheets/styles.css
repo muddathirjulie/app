@@ -246,6 +246,9 @@ body.light-mode .vertical-email:hover {
   .home .description {
     font-size: 16px;
   }
+  .theme-toggle {
+    padding-top: 35px;
+  }
 }
 
 @media screen and (max-width: 768px) {
