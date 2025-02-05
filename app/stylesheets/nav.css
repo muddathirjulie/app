@@ -145,7 +145,7 @@ body.light-mode .hamburger {
     right: -100%;
     width: 70%;
     height: auto;
-    background-color: #1e2a3b;
+    background-color: none;
     flex-direction: column;
     gap: 20px;
     padding-top: 20px;
