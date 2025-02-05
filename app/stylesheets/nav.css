@@ -12,7 +12,7 @@ body.light-mode {
   background-color: #f5f5dc;
 }
 
-/* Navbar - Dark Mode */
+/* Navbar - Desktop */
 .navbar {
   position: fixed;
   top: 0;
@@ -23,37 +23,56 @@ body.light-mode {
   width: 100%;
   transition: all 0.3s ease-in-out;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* Move navbar content to the right */
   align-items: center;
 }
 
 /* Navbar Container */
 .navbar-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* Align content to the right */
   align-items: center;
-  width: 100%;
+  width: auto; /* Allow it to shrink to fit content */
 }
 
 /* Navigation Links */
 .nav-links {
-  position: absolute;
-  top: 60px;
-  right: -100%;
-  width: 80%;
-  height: auto;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  transition: right 0.3s ease-in-out;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
   background: none;
 }
 
-.nav-links.active {
-  right: 30px;
+/* Navigation Links - Mobile */
+.nav-links.mobile {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  height: auto;
+  background-color: #1e2a3b;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+  transition: right 0.3s ease-in-out;
 }
 
+/* Navigation Links when Active */
+.nav-links.active {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background-color: #1e2a3b;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+  transition: right 0.3s ease-in-out;
+}
+
+/* Link Styling */
 .nav-links a {
   color: white;
   font-size: 18px;
@@ -96,10 +115,12 @@ body.light-mode .hamburger {
   color: #2c3e50;
 }
 
+/* Mobile Styling */
 @media screen and (max-width: 768px) {
   .navbar {
     top: 11px;
     padding: 20px;
+    justify-content: space-between;
   }
 
   .navbar-container {
@@ -117,19 +138,29 @@ body.light-mode .hamburger {
     display: block;
   }
 
+  /* Position the mobile menu */
   .nav-links {
     position: absolute;
-    top: 30px;
+    top: 45px;
     right: -100%;
     width: 70%;
     height: auto;
-    background: none;
+    background-color: #1e2a3b;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
     transition: right 0.3s ease-in-out;
-    text-align: right;
-    gap: 8px;
+    text-align: left;
   }
 
+  /* Active Class for Mobile Menu */
   .nav-links.active {
     right: 30px;
+    width: 70%;
+  }
+
+  .nav-links a {
+    padding: 12px 24px;
+    font-size: 20px;
   }
 }
