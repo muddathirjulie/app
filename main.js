@@ -2,7 +2,7 @@
 particlesJS("particles-js", {
   particles: {
     number: { value: 80, density: { enable: true, value_area: 800 } },
-    color: { value: "#ffffff" },
+    color: { value: "#ff6f61" },
     shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
     opacity: { value: 0.5, random: false, anim: { enable: false } },
     size: { value: 3, random: true, anim: { enable: false } },
@@ -29,7 +29,7 @@ particlesJS("particles-js", {
 particlesJS("particles-contact-js", {
   particles: {
     number: { value: 80, density: { enable: true, value_area: 800 } },
-    color: { value: "#ffffff" },
+    color: { value: "#ff6f61" },
     shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
     opacity: { value: 0.5, random: false, anim: { enable: false } },
     size: { value: 3, random: true, anim: { enable: false } },
