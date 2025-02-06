@@ -23,16 +23,16 @@ body.light-mode {
   width: 100%;
   transition: all 0.3s ease-in-out;
   display: flex;
-  justify-content: flex-end; /* Move navbar content to the right */
+  justify-content: flex-end;
   align-items: center;
 }
 
 /* Navbar Container */
 .navbar-container {
   display: flex;
-  justify-content: flex-end; /* Align content to the right */
+  justify-content: flex-end;
   align-items: center;
-  width: auto; /* Allow it to shrink to fit content */
+  width: auto;
 }
 
 /* Navigation Links */
@@ -44,32 +44,32 @@ body.light-mode {
   background: none;
 }
 
-/* Navigation Links - Mobile */
-.nav-links.mobile {
-  position: absolute;
-  top: 60px;
-  right: 0;
-  width: 100%;
-  height: auto;
-  background: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding-top: 20px;
-  transition: right 0.3s ease-in-out;
-}
+/* Mobile Navigation Links */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px; /* Position directly under hamburger */
+    right: 30px; /* Align with hamburger */
+    width: auto; /* Adjust width to fit content */
+    background: none; /* Optional background */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    display: none; /* Hidden initially */
+  }
 
-/* Navigation Links when Active */
-.nav-links.active {
-  position: absolute;
-  top: 60px;
-  right: 30px;
-  background: none;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding-top: 20px;
-  transition: right 0.3s ease-in-out;
+  .nav-links.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .nav-links a {
+    color: white;
+    padding: 8px 12px;
+    font-size: 18px;
+  }
 }
 
 /* Link Styling */
@@ -115,7 +115,6 @@ body.light-mode .hamburger {
   color: #2c3e50;
 }
 
-/* Mobile Styling */
 @media screen and (max-width: 768px) {
   .navbar {
     top: 11px;
@@ -136,31 +135,5 @@ body.light-mode .hamburger {
 
   .hamburger {
     display: block;
-  }
-
-  /* Position the mobile menu */
-  .nav-links {
-    position: absolute;
-    top: 45px;
-    right: -100%;
-    width: 70%;
-    height: auto;
-    background: none;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 20px;
-    transition: right 0.3s ease-in-out;
-    text-align: left;
-  }
-
-  /* Active Class for Mobile Menu */
-  .nav-links.active {
-    right: 30px;
-    width: 70%;
-  }
-
-  .nav-links a {
-    padding: 12px 24px;
-    font-size: 20px;
   }
 }
