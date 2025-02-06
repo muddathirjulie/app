@@ -239,7 +239,7 @@ body.light-mode .category-btn {
 }
 
 body.light-mode .category-btn:hover {
-  background: #ff6f61;
+  background: none;
 }
 
 body.light-mode .skill {

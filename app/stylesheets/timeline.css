@@ -108,18 +108,18 @@ body.light-mode .timeline-item:hover .content {
   transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
 }
 
-body.light-mode .timeline-item:hover::before {
-  background: #4169e1; /* Royal Blue for Circular Marker Hover */
+/* body.light-mode .timeline-item:hover::before {
+  background: #4169e1;
 }
 
 body.light-mode .timeline-item:hover {
-  background-color: #4169e1; /* Royal Blue for Timeline Item Hover */
+  background-color: #4169e1;
 }
 
-/* Timeline Line Hover */
+
 body.light-mode .timeline-item:hover .timeline::after {
-  background: #4169e1; /* Royal Blue Line for Timeline Hover */
-}
+  background: #4169e1; 
+} */
 
 /* Responsive */
 @media screen and (max-width: 768px) {
