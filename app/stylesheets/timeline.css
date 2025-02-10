@@ -124,20 +124,24 @@ body.light-mode .timeline-item:hover .timeline::after {
 /* Responsive */
 @media screen and (max-width: 768px) {
   .timeline::after {
-    left: 20px;
+    left: 20px; /* Keeps the timeline line aligned to the left */
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 50px;
+    padding-left: 70px; /* Increases space between timeline and info */
     text-align: left;
-  }
-
-  .timeline-item.right {
-    left: 0;
+    left: 0 !important;
   }
 
   .timeline-item::before {
-    left: 10px;
+    left: 20px !important; /* Ensures the marker aligns with the timeline */
+    right: auto;
+  }
+
+  .timeline-item .content {
+    margin-left: 10px; /* Adds extra spacing between marker and info box */
   }
 }
+
+
