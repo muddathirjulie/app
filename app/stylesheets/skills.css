@@ -139,20 +139,6 @@
   }
 }
 
-/* Light Theme */
-body.light-mode .timeline-section {
-  background-color: #f5f5dc; /* Beige background for light theme */
-}
-
-body.light-mode .timeline-item .content {
-  background-color: #ffffff; /* White background for content */
-  color: black; /* Default text color */
-}
-
-body.light-mode .timeline-item:hover .content {
-  background-color: #f39c12; /* Change to a vibrant color on hover */
-}
-
 body.light-mode .skills-section {
   background-color: #f5f5dc; /* Beige background for skills section */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Lighter shadow for light theme */
@@ -167,7 +153,7 @@ body.light-mode .category-btn {
 }
 
 body.light-mode .category-btn:hover {
-  background: none;
+  background: lightblue;
 }
 
 body.light-mode .skill {

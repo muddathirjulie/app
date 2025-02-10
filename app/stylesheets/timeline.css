@@ -1,6 +1,4 @@
- /* Timeline Section - Dark Theme */
-
- /* General Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,84 +10,6 @@
   max-width: 1000px;
   margin: 40px auto;
   padding: 20px;
-}
-
-.timeline-section h2 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  color: #ff6f61;
-}
-
-/* Timeline */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.timeline-item {
-  position: relative;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-item:hover {
-  transform: translateY(-10px);  /* Slightly raise the item */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
-}
-
-.timeline-item .content {
-  background-color: #ecf0f1; /* Light background for content */
-  border-radius: 8px;
-  padding: 15px;
-  color: black; /* Default text color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.timeline-item:hover .content {
-  background-color: #f39c12; /* Change to a vibrant color on hover */
-  color: white; /* Change text color to white on hover */
-}
-
-.timeline-item h3 {
-  font-size: 1.5em;
-  color: black; /* Default text color */
-  transition: color 0.3s ease;
-}
-
-.timeline-item:hover h3 {
-  color: white; /* Change text color to white on hover */
-}
-
-.timeline-item p {
-  color: black; /* Default text color */
-  transition: color 0.3s ease;
-}
-
-.timeline-item:hover p {
-  color: white; /* Change text color to white on hover */
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .timeline-item {
-    padding: 15px;
-  }
-
-  .timeline-item h3 {
-    font-size: 1.2em;
-  }
-
-  .timeline-section h2 {
-    font-size: 2em;
-  }
-}
-
- .timeline-section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
   background: #2c3e50; /* Dark Background for Dark Theme */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -99,7 +19,7 @@
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #ff6f61; /* Light Red for Heading in Dark Theme */
+  color: #ff6f61; /* Light Red for Heading */
 }
 
 /* Timeline */
@@ -133,8 +53,11 @@
   color: white; /* White Text for Content */
   padding: 15px 20px;
   border-radius: 5px;
-  position: relative;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:hover .content {
+  background-color: orange;
 }
 
 .timeline-item.left {
@@ -169,11 +92,11 @@
 
 /* Light Theme */
 body.light-mode .timeline-section {
-  background: #f5f5dc; /* Beige Background for Light Theme */
+  background: #f5f5dc; /* Beige Background */
 }
 
 body.light-mode .timeline-section h2 {
-  color: #000080; /* Navy Blue for Heading in Light Theme */
+  color: #000080; /* Navy Blue for Heading */
 }
 
 body.light-mode .timeline-item .content {
@@ -189,46 +112,30 @@ body.light-mode .timeline::after {
   background: #0000cd; /* Royal Blue Line for Timeline */
 }
 
-/* Light Theme - Hover Effect */
+/* Hover Effect for Light Theme */
 body.light-mode .timeline-item:hover .content {
-  background: #dcdcdc; /* Slightly darker grey background for hover */
-  transition: background-color 0.3s ease; /* Smooth transition for the hover effect */
+  background-color: lightblue; /* Change to a vibrant color on hover */
 }
-
-/* body.light-mode .timeline-item:hover::before {
-  background: #4169e1;
-}
-
-body.light-mode .timeline-item:hover {
-  background-color: #4169e1;
-}
-
-
-body.light-mode .timeline-item:hover .timeline::after {
-  background: #4169e1; 
-} */
 
 /* Responsive */
 @media screen and (max-width: 768px) {
   .timeline::after {
-    left: 20px; /* Keeps the timeline line aligned to the left */
+    left: 20px;
   }
 
   .timeline-item {
     width: 100%;
-    padding-left: 70px; /* Increases space between timeline and info */
+    padding-left: 70px;
     text-align: left;
     left: 0 !important;
   }
 
   .timeline-item::before {
-    left: 20px !important; /* Ensures the marker aligns with the timeline */
+    left: 20px !important;
     right: auto;
   }
 
   .timeline-item .content {
-    margin-left: 10px; /* Adds extra spacing between marker and info box */
+    margin-left: 10px;
   }
 }
-
-
