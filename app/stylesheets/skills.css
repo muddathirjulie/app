@@ -1,89 +1,8 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Timeline Section */
-.timeline-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-.timeline-section h2 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 30px;
-  color: #ff6f61;
-}
-
-/* Timeline */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.timeline-item {
-  position: relative;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-item:hover {
-  transform: translateY(-10px);  /* Slightly raise the item */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
-}
-
-.timeline-item .content {
-  background-color: #ecf0f1; /* Light background for content */
-  border-radius: 8px;
-  padding: 15px;
-  color: black; /* Default text color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.timeline-item:hover .content {
-  background-color: #f39c12; /* Change to a vibrant color on hover */
-  color: white; /* Change text color to white on hover */
-}
-
-.timeline-item h3 {
-  font-size: 1.5em;
-  color: black; /* Default text color */
-  transition: color 0.3s ease;
-}
-
-.timeline-item:hover h3 {
-  color: white; /* Change text color to white on hover */
-}
-
-.timeline-item p {
-  color: black; /* Default text color */
-  transition: color 0.3s ease;
-}
-
-.timeline-item:hover p {
-  color: white; /* Change text color to white on hover */
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .timeline-item {
-    padding: 15px;
-  }
-
-  .timeline-item h3 {
-    font-size: 1.2em;
-  }
-
-  .timeline-section h2 {
-    font-size: 2em;
-  }
-}
-
 /* Skills Section */
 .skills-section {
   max-width: 900px;
