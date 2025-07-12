@@ -483,10 +483,14 @@
         <button type="submit" class="btn-submit">Send</button>
       </form>
 
-      <!-- Popup Dialog -->
+      <!-- Modern Popup Dialog -->
       <div id="popup-dialog" class="popup hidden">
         <div class="popup-content">
-          <p id="popup-message">Thank you! Your message has been sent.</p>
+          <!-- <div class="popup-icon">✅</div> -->
+          <p id="popup-message">
+            Thank you!<br />I’ve received your message and will get back to you
+            shortly.<br />Have a great day further!
+          </p>
           <button id="popup-close" class="btn-close">Close</button>
         </div>
       </div>
@@ -510,22 +514,16 @@
             if (response.ok) {
               popupMessage.innerHTML =
                 "✅ Thank you!<br>I’ve received your message and will get back to you shortly.<br>Have a great day further!";
-              popup.classList.remove("hidden");
-
-              // Restart animation
-              const popupContent = popup.querySelector(".popup-content");
-              popupContent.style.animation = "none";
-              void popupContent.offsetWidth; // Trigger reflow
-              popupContent.style.animation = "fadeInScale 0.4s ease forwards";
+              showPopup();
               form.reset();
             } else {
-              popupMessage.textContent =
+              popupMessage.innerHTML =
                 "❌ Something went wrong. Please try again.";
-              popup.classList.remove("hidden");
+              showPopup();
             }
           } catch (error) {
-            popupMessage.textContent = "⚠️ Network error. Please try again.";
-            popup.classList.remove("hidden");
+            popupMessage.innerHTML = "⚠️ Network error. Please try again.";
+            showPopup();
           }
         });
 
@@ -533,12 +531,23 @@
           popup.classList.add("hidden");
         });
 
-        window.addEventListener("pageshow", function (event) {
-          if (event.persisted) {
+        window.addEventListener("pageshow", (e) => {
+          if (e.persisted) {
             form.reset();
             popup.classList.add("hidden");
           }
         });
+
+        function showPopup() {
+          popup.classList.remove("hidden");
+          const popupContent = popup.querySelector(".popup-content");
+          popupContent.style.animation = "none";
+          void popupContent.offsetWidth;
+          popupContent.style.animation = "popupFadeIn 0.4s ease-out forwards";
+          setTimeout(() => {
+            popup.classList.add("hidden");
+          }, 5000);
+        }
       </script>
     </section>
 
