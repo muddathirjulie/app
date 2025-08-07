@@ -74,6 +74,10 @@ body.light-mode .headshot {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+body.light-mode .about h2 {
+  color: #000080;
+}
+
 body.light-mode .cta-button {
   background-color: #000080;
 }
