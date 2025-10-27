@@ -1,47 +1,95 @@
-/* Footer - Dark Theme */
+/* ===========================
+   Footer (Dark Theme)
+=========================== */
 footer {
-  background-color: #2c3e50; /* Dark Blue background for Dark Theme */
-  color: #ecf0f1; /* Light Gray text for Dark Theme */
-  text-align: center; /* Center align text */
-  padding: 15px 0; /* Add spacing */
-  font-size: 14px; /* Font size */
-  font-family: 'Arial', sans-serif; /* Clean font */
-  border-top: 2px solid #34495e; /* Subtle border */
+  background-color: #2c3e50;         /* Dark Blue */
+  color: #ecf0f1;                    /* Light text */
+  text-align: center;
+  padding: 18px 12px;                /* a bit more breathing room */
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  border-top: 2px solid #34495e;
+  position: relative;
+  overflow: hidden;
+  /* subtle reveal */
+  opacity: 0;
+  animation: footerFade .45s ease-out .05s forwards;
 }
 
-footer p {
-  margin: 0; /* Remove default paragraph margin */
+@keyframes footerFade {
+  from { opacity: 0; transform: translateY(8px) }
+  to   { opacity: 1; transform: none }
 }
 
+footer p { margin: 0; line-height: 1.6; }
+
+/* Link styling with engineered underline */
 footer a {
-  color: #ff6f61; /* Teal link color for Dark Theme */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold link */
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  outline: none;
+  transition: color .2s ease;
 }
 
-footer a:hover {
-  color: #ff8a7a; /* Darker teal on hover for Dark Theme */
-  text-decoration: underline; /* Add underline on hover */
+/* animated underline that won’t cross text */
+footer a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 2px; border-radius: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
 }
 
-/* Footer - Light Theme */
+footer a:hover,
+footer a:focus-visible {
+  color: #ff8a7a;
+}
+footer a:hover::after,
+footer a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Keyboard focus ring */
+footer a:focus-visible {
+  outline: 2px solid #ff6f61;
+  outline-offset: 2px;
+}
+
+/* ===========================
+   Light Theme
+=========================== */
 body.light-mode footer {
-  background-color: #f5f5dc; /* Beige background for Light Theme */
-  color: #2c3e50; /* Dark text for Light Theme */
-  border-top: 2px solid #b0b0b0; /* Subtle light border for Light Theme */
+  background-color: #f5f5dc;         /* Beige */
+  color: #2c3e50;
+  border-top: 2px solid #b0b0b0;
 }
 
 body.light-mode footer a {
-  color: #000080; /* Navy Blue link color for Light Theme */
+  color: #000080;                    /* Navy */
+}
+body.light-mode footer a:hover,
+body.light-mode footer a:focus-visible {
+  color: #4a6f91;                    /* Muted blue */
 }
 
-body.light-mode footer a:hover {
-  color: #4a6f91; /* Muted blue on hover for Light Theme */
+/* Update underline color automatically via currentColor */
+
+/* ===========================
+   Motion safety
+=========================== */
+@media (prefers-reduced-motion: reduce){
+  footer { animation: none !important; }
+  footer a::after { transition: none !important; }
 }
 
-/* Responsive Styles */
+/* ===========================
+   Responsive
+=========================== */
 @media screen and (max-width: 480px) {
-  footer {
-      font-size: 12px; /* Smaller font size for mobile */
-  }
+  footer { font-size: 12px; }
 }

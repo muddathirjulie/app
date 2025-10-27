@@ -1,126 +1,150 @@
-/* General Reset */
+/* ================ General Reset ================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Timeline Section */
+/* ===== Animations (lightweight) ===== */
+@keyframes tlFadeUp { from {opacity:0; transform: translateY(18px)} to {opacity:1; transform:none} }
+@keyframes tlSlideL  { from {opacity:0; transform: translateX(-24px)} to {opacity:1; transform:none} }
+@keyframes tlSlideR  { from {opacity:0; transform: translateX(24px)}  to {opacity:1; transform:none} }
+@keyframes tlPulse   { 0%,100% { box-shadow: 0 0 0 0 rgba(255,111,97,.55) } 50% { box-shadow: 0 0 0 8px rgba(255,111,97,0) } }
+@keyframes tlGrow    { from { transform: scaleY(0) } to { transform: scaleY(1) } }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ================ Timeline Section ================ */
 .timeline-section {
   max-width: 1000px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 28px 20px;
   background: #2c3e50; /* Dark Background for Dark Theme */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  opacity: 0;
+  animation: tlFadeUp .6s ease-out .05s forwards;
 }
 
 .timeline-section h2 {
   text-align: center;
   font-size: 2.5em;
   margin-bottom: 40px;
-  color: #ff6f61; /* Light Red for Heading */
+  color: #ff6f61; /* Heading */
+  letter-spacing: .4px;
 }
 
-/* Timeline */
+/* ================ Timeline Spine ================ */
 .timeline {
   position: relative;
   max-width: 800px;
-  margin: auto;
+  margin: 0 auto;
+  padding: 8px 0;
 }
 
 .timeline::after {
   content: "";
   position: absolute;
   width: 4px;
-  background: #ff6f61; /* Light Red for Timeline Line */
+  background: #ff6f61; /* Spine color */
   top: 0;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scaleY(1);
+  transform-origin: top;
+  /* line grow on load */
+  animation: tlGrow .7s ease-out .1s both;
 }
 
-/* Timeline Items */
+/* ================ Timeline Items ================ */
 .timeline-item {
   position: relative;
   width: 50%;
   padding: 20px;
   box-sizing: border-box;
-}
-
-.timeline-item .content {
-  background: #34495e; /* Dark Content Background */
-  color: white; /* White Text for Content */
-  padding: 15px 20px;
-  border-radius: 5px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-item:hover .content {
-  background-color: orange;
+  opacity: 0;
 }
 
 .timeline-item.left {
   left: 0;
   text-align: right;
+  animation: tlSlideL .55s ease-out .15s forwards;
 }
-
 .timeline-item.right {
   left: 50%;
   text-align: left;
+  animation: tlSlideR .55s ease-out .15s forwards;
 }
 
-/* Circular Marker */
+/* small stagger via nth-child */
+.timeline-item:nth-child(2) { animation-delay: .22s; }
+.timeline-item:nth-child(3) { animation-delay: .29s; }
+.timeline-item:nth-child(4) { animation-delay: .36s; }
+.timeline-item:nth-child(5) { animation-delay: .43s; }
+.timeline-item:nth-child(6) { animation-delay: .50s; }
+
+.timeline-item .content {
+  background: #34495e; /* Card bg */
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.2);
+  transition: transform .18s ease, box-shadow .25s ease, background-color .25s ease;
+}
+
+.timeline-item:hover .content {
+  background-color: orange; /* your original hover choice */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.28);
+}
+
+/* ================ Circular Markers ================ */
 .timeline-item::before {
   content: "";
   position: absolute;
   width: 16px;
   height: 16px;
-  background: #ff6f61; /* Light Red for Circular Marker */
+  background: #ff6f61; /* Marker color */
   border-radius: 50%;
-  top: 20px;
+  top: 24px;
   z-index: 1;
+  animation: tlPulse 1.8s ease-in-out infinite;
 }
 
-.timeline-item.left::before {
-  right: -10px;
-}
+.timeline-item.left::before  { right: -10px; }
+.timeline-item.right::before { left:  -10px;  }
 
-.timeline-item.right::before {
-  left: -10px;
-}
-
-/* Light Theme */
+/* ================ Light Theme ================ */
 body.light-mode .timeline-section {
-  background: #f5f5dc; /* Beige Background */
+  background: #f5f5dc; /* Beige */
 }
 
 body.light-mode .timeline-section h2 {
-  color: #000080; /* Navy Blue for Heading */
+  color: #000080; /* Navy for Heading */
 }
 
 body.light-mode .timeline-item .content {
-  background: #e0e0e0; /* Light Grey for Content Background */
-  color: #000; /* Black Text for Content */
+  background: #e0e0e0; /* Light card */
+  color: #000;
 }
 
-body.light-mode .timeline-item::before {
-  background: #0000cd; /* Royal Blue for Circular Marker */
-}
-
+body.light-mode .timeline-item::before,
 body.light-mode .timeline::after {
-  background: #0000cd; /* Royal Blue Line for Timeline */
+  background: #0000cd; /* Royal Blue */
 }
 
-/* Hover Effect for Light Theme */
 body.light-mode .timeline-item:hover .content {
-  background-color: lightblue; /* Change to a vibrant color on hover */
+  background-color: lightblue;
 }
 
-/* Responsive */
+/* ================ Responsive ================ */
 @media screen and (max-width: 768px) {
   .timeline::after {
     left: 20px;
+    transform: translateX(0) scaleY(1);
   }
 
   .timeline-item {
@@ -128,6 +152,7 @@ body.light-mode .timeline-item:hover .content {
     padding-left: 70px;
     text-align: left;
     left: 0 !important;
+    animation: tlFadeUp .45s ease-out forwards; /* simpler on mobile */
   }
 
   .timeline-item::before {

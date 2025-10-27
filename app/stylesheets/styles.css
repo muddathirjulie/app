@@ -1,10 +1,35 @@
-/* General Styles - Default to Dark Mode */
+/* === Animations (added) === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gentleFloat {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-6px); }
+}
+
+@keyframes subtlePulse {
+  0%,100% { filter: none; }
+  50%     { filter: brightness(1.06); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ===========================
+   General Styles - Default to Dark Mode
+=========================== */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
   background-color: #222; /* Dark Mode by Default */
   color: #ffffff;
+  /* added */
+  transition: background-color .3s ease, color .3s ease;
 }
 
 /* Vertical Line */
@@ -14,6 +39,8 @@ body {
   background-color: #ff6f61; /* Match your theme color */
   border: none;
   margin: 10px 0;
+  /* added */
+  transition: background-color .3s ease;
 }
 
 /* Positioning for Socials */
@@ -56,7 +83,10 @@ body.light-mode {
   display: flex;
   align-items: center;
   cursor: pointer;
+  /* added */
+  transition: transform .2s ease;
 }
+.theme-toggle:hover { transform: translateY(-1px); }
 
 /* Lightbulb Icon (Visible in light mode) */
 .theme-toggle .fa-lightbulb {
@@ -65,9 +95,10 @@ body.light-mode {
   color: #fff; /* Lightbulb icon is white in dark mode */
   transition: opacity 0.3s ease;
   opacity: 1; /* Initially visible */
+  /* added */
+  transition: color .3s ease, text-shadow .3s ease, opacity .3s ease;
 }
 
-/* Light Mode Visibility of Lightbulb Icon */
 body.light-mode .theme-toggle .fa-lightbulb {
   color: #000; /* Lightbulb icon changes to black in light mode */
 }
@@ -82,6 +113,8 @@ body.light-mode .theme-toggle .fa-lightbulb {
   position: relative;
   cursor: pointer;
   margin-left: 10px;
+  /* added */
+  transition: background .3s ease;
 }
 
 .switch:before {
@@ -96,7 +129,6 @@ body.light-mode .theme-toggle .fa-lightbulb {
   transition: 0.3s;
 }
 
-/* Light Mode Toggle */
 body.light-mode .switch {
   background: #ddd; /* Light Mode Background */
 }
@@ -123,6 +155,8 @@ body.light-mode .switch:before {
   max-width: 800px;
   padding: 10px;
   box-sizing: border-box;
+  /* added */
+  animation: fadeUp .6s ease-out .05s both;
 }
 
 .home h1 {
@@ -130,23 +164,31 @@ body.light-mode .switch:before {
   color: #ff6f61;
   font-weight: 700;
   margin-bottom: 20px;
+  /* added */
+  animation: fadeUp .6s ease-out .12s both;
 }
 
 .home h2 {
   font-size: 32px;
   color: #ff8a7a;
   margin-bottom: 10px;
+  /* added */
+  animation: fadeUp .6s ease-out .1s both;
 }
 
 .home .intro {
   font-size: 28px;
   margin: 20px 0;
   color: #e74c3c;
+  /* added */
+  animation: fadeUp .6s ease-out .18s both;
 }
 
 .home .description {
   font-size: 18px;
   line-height: 1.6;
+  /* added */
+  animation: fadeUp .7s ease-out .24s both;
 }
 
 /* CTA Button */
@@ -161,10 +203,17 @@ body.light-mode .switch:before {
   font-weight: 600;
   transition: background-color 0.3s;
   text-decoration: none;
+  /* added */
+  transition: background-color .25s ease, transform .15s ease, box-shadow .25s ease, filter .25s ease;
+  animation: fadeUp .75s ease-out .3s both;
 }
 
 .cta-button:hover {
   background-color: #f39c12;
+  /* added */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(243,156,18,.25);
+  animation: subtlePulse 1.4s ease-in-out infinite;
 }
 
 /* Social Links */
@@ -185,10 +234,16 @@ body.light-mode .switch:before {
   font-weight: 600;
   margin-bottom: 10px;
   transition: color 0.3s ease;
+  /* added */
+  transition: color .25s ease, transform .2s ease, text-shadow .25s ease;
+  animation: gentleFloat 5s ease-in-out infinite;
 }
 
 .social-icon:hover {
   color: #ff8a7a;
+  /* added */
+  transform: translateY(-2px);
+  text-shadow: 0 6px 16px rgba(255,111,97,.35);
 }
 
 /* Email Address */
@@ -210,10 +265,14 @@ body.light-mode .switch:before {
   color: #ff6f61;
   text-decoration: none;
   transition: color 0.3s ease;
+  /* added */
+  transition: color .25s ease, transform .2s ease;
 }
 
 .vertical-email:hover {
   color: #ff8a7a;
+  /* added */
+  transform: translateY(-2px);
 }
 
 /* Particles.js Background */
@@ -224,6 +283,7 @@ body.light-mode .switch:before {
   width: 100%;
   height: 100%;
   z-index: 0;
+  /* UNCHANGED on purpose */
 }
 
 /* Light Mode Styles */

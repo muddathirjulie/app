@@ -1,26 +1,46 @@
-/* Contact Form Section - Dark Theme */
+/* ===========================
+   Contact Section
+=========================== */
 .contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 20px;
-  color: white;
+  padding: 80px 20px;
+  color: #fff;
+  background: transparent;
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out 0.05s forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .contact h1 {
-  font-size: 40px;
-  margin-bottom: 30px;
-  color: #ff6f61; /* Vibrant coral for Dark Theme */
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #ff6f61;
+  letter-spacing: 0.5px;
+  text-align: center;
 }
 
+/* ===========================
+   Form Container
+=========================== */
 .contact-form {
   width: 100%;
-  max-width: 500px; /* Keeps the form compact */
-  background-color: #2c3e50; /* Darker blue for form background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  max-width: 520px;
+  background-color: #2c3e50;
+  padding: 28px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.contact-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.35);
 }
 
 .contact-form .form-group {
@@ -30,185 +50,172 @@
 .contact-form label {
   display: block;
   font-size: 18px;
-  color: #ff6f61; /* Bright yellow for labels in Dark Theme */
-  margin-bottom: 10px;
+  color: #ff6f61;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
+/* Inputs */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px 14px;
   font-size: 16px;
+  font-family: inherit;
   color: #fff;
-  background-color: #34495e; /* Slightly darker input background */
-  border: 1px solid #4a6f91; /* Muted blue border */
-  border-radius: 5px;
+  background-color: #34495e;
+  border: 1px solid #4a6f91;
+  border-radius: 6px;
   outline: none;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #ff8c00; /* Orange border on focus */
-  box-shadow: 0 0 8px rgba(255, 140, 0, 0.5); /* Subtle glow on focus */
+  border-color: #ff8c00;
+  box-shadow: 0 0 10px rgba(255,140,0,0.4);
+  transform: scale(1.01);
 }
 
 .contact-form textarea {
   resize: none;
-  height: 100px;
+  height: 120px;
 }
 
+/* Submit Button */
 .contact-form .btn-submit {
   display: inline-block;
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
-  color: white;
-  background-color: #ff6f61; /* Coral button background */
+  color: #fff;
+  background-color: #ff6f61;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
-
 .contact-form .btn-submit:hover {
-  background-color: #ff8a7a; /* Lighter coral on hover */
+  background-color: #ff8a7a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255,111,97,0.35);
 }
 
-/* Contact Form Section - Light Theme */
-body.light-mode .contact {
-  color: #000; /* Black Text for Light Mode */
+/* ===========================
+   Popup Dialog
+=========================== */
+.popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+.popup.hidden { display: none; }
+
+.popup-content {
+  background: linear-gradient(135deg,#2c3e50,#34495e);
+  color: #fff;
+  padding: 34px 26px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  animation: popupFade 0.4s ease-out forwards;
+  transform: scale(0.9);
+  opacity: 0;
+}
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-body.light-mode .contact h1 {
-  color: #000080; /* Navy Blue for Heading in Light Theme */
+.popup-icon {
+  font-size: 44px;
+  margin-bottom: 15px;
+  animation: pulseIcon 1.6s ease-in-out infinite;
 }
+@keyframes pulseIcon {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%     { transform: scale(1.08); opacity: 0.8; }
+}
+
+.popup-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-close {
+  background-color: #ff6f61;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 26px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-close:hover {
+  background-color: #ff8a7a;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Light Mode
+=========================== */
+body.light-mode .contact { color: #000; }
+body.light-mode .contact h1 { color: #000080; }
 
 body.light-mode .contact-form {
-  background-color: #f5f5dc; /* Beige Background for Light Theme */
+  background-color: #f5f5dc;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
-
-body.light-mode .contact-form label {
-  color: #000080; /* Navy Blue for Labels in Light Theme */
-}
+body.light-mode .contact-form label { color: #000080; }
 
 body.light-mode .contact-form input,
 body.light-mode .contact-form textarea {
-  background-color: #e0e0e0; /* Light Grey for Input Background */
-  color: #000; /* Black Text for Input Fields */
-  border: 1px solid #4a6f91; /* Muted blue border */
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1px solid #4a6f91;
 }
-
 body.light-mode .contact-form input:focus,
 body.light-mode .contact-form textarea:focus {
-  border-color: #000080; /* Navy Blue Border on Focus */
-  box-shadow: 0 0 8px rgba(0, 0, 128, 0.5); /* Subtle Glow on Focus */
+  border-color: #000080;
+  box-shadow: 0 0 10px rgba(0,0,128,0.45);
 }
 
 body.light-mode .contact-form .btn-submit {
-  background-color: #000080; /* Navy Blue Button Background */
+  background-color: #000080;
 }
-
 body.light-mode .contact-form .btn-submit:hover {
-  background-color: #4a6f91; /* Muted blue on hover */
+  background-color: #4a6f91;
 }
 
-/* Popup Dialog */
- .popup {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      backdrop-filter: blur(4px);
-    }
+body.light-mode .popup-content {
+  background: linear-gradient(135deg,#f5f5dc,#e0e0e0);
+  color: #000;
+}
+body.light-mode .btn-close {
+  background-color: #000080;
+}
+body.light-mode .btn-close:hover {
+  background-color: #4a6f91;
+}
 
-    .popup.hidden {
-      display: none;
-    }
-
-    .popup-content {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
-      color: white;
-      padding: 30px 25px;
-      border-radius: 16px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      animation: popupFadeIn 0.4s ease-out forwards;
-      transform: scale(0.95);
-      opacity: 0;
-    }
-
-    .popup-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .popup-content p {
-      font-size: 18px;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-
-    .btn-close {
-      background-color: #ff6f61;
-      color: white;
-      font-weight: 600;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-close:hover {
-      background-color: #ff8a7a;
-    }
-
-    @keyframes popupFadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    /* Light Mode Support */
-    body.light-mode .popup-content {
-      background: linear-gradient(135deg, #f5f5dc, #e0e0e0);
-      color: #000;
-    }
-
-    body.light-mode .btn-close {
-      background-color: #000080;
-    }
-
-    body.light-mode .btn-close:hover {
-      background-color: #4a6f91;
-    }
-
-/* Responsive Styles */
-@media screen and (max-width: 480px) {
-  .contact h1 {
-      font-size: 28px;
-  }
-
-  .contact-form {
-      padding: 15px;
-  }
-
-  .contact-form label {
-      font-size: 16px;
-  }
+/* ===========================
+   Responsive
+=========================== */
+@media screen and (max-width: 600px) {
+  .contact h1 { font-size: 30px; margin-bottom: 24px; }
+  .contact-form { padding: 18px; }
+  .contact-form label { font-size: 16px; }
+  .contact-form .btn-submit { font-size: 16px; padding: 12px; }
 }
