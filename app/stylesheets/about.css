@@ -77,6 +77,21 @@
 }
 
 /* ===========================
+   Bio Links (NeuroWeb etc)
+=========================== */
+.about .bio a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.about .bio a:hover {
+  color: #ff8a7a;
+  text-shadow: 0 0 8px rgba(255, 111, 97, 0.4);
+}
+
+/* ===========================
    CTA Button
 =========================== */
 .cta-button {
@@ -108,6 +123,15 @@ body.light-mode .about {
 
 body.light-mode .about .bio {
   color: #444;
+}
+
+body.light-mode .about .bio a {
+  color: #000080;
+}
+
+body.light-mode .about .bio a:hover {
+  color: #4a6f91;
+  text-shadow: none;
 }
 
 body.light-mode .headshot {
@@ -167,7 +191,7 @@ body.light-mode .cta-button:hover {
   }
 
  .headshot-container {
-    align-self: center !important; /* override flex-start */
+    align-self: center !important;
     justify-content: center;
   }
 
