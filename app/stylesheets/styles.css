@@ -1,3 +1,7 @@
+:root {
+  --nav-height: 70px; /* Change if your navbar height is different */
+}
+
 /* === Animations (added) === */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
@@ -142,11 +146,12 @@ body.light-mode .switch:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100svh - var(--nav-height)); /* Better mobile support */
   text-align: left;
   position: relative;
   color: white;
-  padding: 20px;
+  padding: calc(20px + var(--nav-height)) 20px 20px 20px;
   box-sizing: border-box;
 }
 
