@@ -164,3 +164,7 @@ body.light-mode .timeline-item:hover .content {
     margin-left: 10px;
   }
 }
+
+.timeline-item:last-child .content {
+  border: 2px solid #ff6f61;
+}
